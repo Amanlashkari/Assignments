@@ -1,0 +1,69 @@
+Write a code to check if given number is armstrong number or not.
+
+import java.util.Scanner;
+public class ArmstrongNumber {
+   public static void main(String args[]) {
+      int number = 370;
+      int check, rem, sum = 0;
+      System.out.println("Enter the number to be verified:");
+      Scanner sca = new Scanner(System.in);
+      number = sca.nextInt();
+      check = number;
+      while(check!=0) {
+         rem = check % 10;
+         sum = sum + (rem * rem * rem);
+         check = check / 10;
+      }
+      if(sum==number)
+         System.out.println("Given number is an armstrong number");
+      else
+         System.out.println("Given number is not an armstrong number");
+   }
+}
+
+
+2) From an array find 3rd highest value.
+
+public class ThirdLargestNumberInAnArray {
+   public static void main(String args[]){
+   int temp, size;
+   int arr[] = {12, 15, 23, 66, 92, 60};
+   size = arr.length;
+   
+   for(int i = 0; i<size; i++ ){
+      for(int j = i+1; j<size; j++){
+         if(arr[i]>arr[j]){
+            temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+         }
+      }
+   }
+   System.out.println("Third largest number is:: "+arr[size-3]);
+   }
+}
+
+3) Write a code to reverse a number.
+
+import java.util.Scanner;
+
+public class JavaProgram
+{
+    public static void main(String args[])
+    {
+        int num, rev=0, rem;
+        Scanner scan = new Scanner(System.in);
+		
+        System.out.print("Enter a Number : ");
+        num = scan.nextInt();
+		
+        while(num != 0)
+        {
+            rem = num%10;
+            rev = rev*10 + rem;
+            num = num/10;
+        }
+		
+        System.out.print("Reverse = "+rev);
+    }
+}
