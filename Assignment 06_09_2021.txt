@@ -1,0 +1,167 @@
+1.  Replace a character a with e in following string without using inbuilt method.
+
+  Halo
+
+  Replace character at 3rd index pos in upper case.
+
+public class Main
+{
+    public static void main(String[] args) {
+       String str="Halo";
+       System.out.println("String:"+str);
+       int pos = 3;
+       char rep = 'E';
+       String res = str.substring(0, pos) + rep + str.substring(pos + 1);
+       System.out.println("String after replacing a character: "+res);
+    }
+}
+
+2. Write a code to mask a given string.
+   for e.g 
+
+    SABBIR POONAWALA
+    SAXXXX POXXXXXXX
+
+package Mywork;
+
+public class maskstring {
+
+	    public static void main(String[] args) {
+	        String string = "SABBIR POONAWALA";
+	        System.out.println("String:" + getMaskedString(string));
+	    }
+
+	    public static StringBuilder getMaskedString(String inputString)
+	    {
+	        String [] get = inputString.split(" ");
+	        System.out.println("String:"+inputString);
+	        StringBuilder builder = new StringBuilder();
+	        for (String string : get) 
+	        {
+	            builder.append(string.substring(0,2));
+	            int mask = string.length()-2;
+	            for (int i = 0; i < mask; i++) {
+	                builder.append("X");
+	            }
+	            builder.append(" ");
+	        }
+	        return builder;
+	    }
+	}
+
+
+3. Check if given string starts with A and Endwith t.
+
+	public static void main(String[] args) {
+      	  String str="A";
+
+		if(str.startsWith("A")==true)
+			System.out.println("String starts with A");
+		else
+			System.out.println("String does not start with www");
+			
+		String strr="t";
+
+		if(strr.endsWith("t")==true)
+			System.out.println("String ends with t");
+		else
+			System.out.println("String does not end with .com");
+	}
+
+
+4. Create a class Student with following attributes
+   
+   Student
+ ============
+   rollNo int
+   studentFirstName String
+   studentLastName  String
+   studentAge int
+ 
+ Override toString(),equals(),hashCode() without using tool.
+
+package Mywork;
+
+public class studentss {
+        	int rollNo;
+        	String studentFirstName;
+        	String studentLastName;
+        	int studentAge;
+
+public studentss(int rollNo, String studentFirstName, String studentLastName, int age)
+{
+            this.rollNo = rollNo;
+            this.studentFirstName = studentFirstName;
+            this.studentLastName = studentLastName;
+            this.studentAge = age;
+}
+@Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(rollNo).append(studentFirstName).append(studentLastName).append(studentAge);
+        return builder.toString();
+    }
+
+@Override
+    public boolean equals(Object obj) 
+    {
+        if(obj != null && obj instanceof studentss )
+        {
+            studentss student = (studentss)obj;
+            if (studentAge != student.studentAge)
+                return false;
+            if (rollNo != student.rollNo)
+                return false;
+            if (studentFirstName == null) {
+                if (student.studentFirstName != null)
+                    return false;
+            } else if (!studentFirstName.equals(student.studentFirstName))
+                return false;
+            if (studentLastName == null) {
+                if (student.studentLastName != null)
+                    return false;
+            } else if (!studentLastName.equals(student.studentLastName))
+                return false;
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
+
+@Override
+    public int hashCode() 
+	{
+        return rollNo
+        ^studentFirstName.hashCode()
+        ^studentLastName.hashCode()
+        ^studentAge;
+    	}
+    public static void main(String[] args) 
+	{
+        studentss s1 = new studentss(1001,"Aman","lashkari",23);
+        studentss s2 = new studentss(1002,"Ankit","lashkari",26);
+
+        System.out.println("Student 1 : "+s1);
+        System.out.println("Student 2 : "+s2);
+       
+        System.out.println("S1 equal S2 : "+s1.equals(s2));
+
+        System.out.println("S1 hashcode : "+s1.hashCode());
+        System.out.println("S2 hashcode : "+s2.hashCode());        
+    }    
+}
+
+5 Identify classes(java.lang) from API Documentation which can be used for static import.
+
+
+import static java.lang.Math.*;
+import static org.junit.Assert.*;
+import static java.lang.System.*;
+import static java.lang.System.out;
+
+
+
+
+

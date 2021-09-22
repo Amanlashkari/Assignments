@@ -1,0 +1,212 @@
+1. Create an menu drive console-based application to register,view,update and delete student details.
+
+Use static arrays for storage of student objects.
+
+import java.util.Scanner;
+
+public class StudentArray {
+
+public static void main(String[] args){
+
+    getMenu();
+}
+public static void getMenu( ){
+    Student[] stud = new Student[100];
+
+    Scanner sc = new Scanner(System.in);
+    int select;
+    System.out.println("1. Register Student");
+    System.out.println("2. View Student");
+    System.out.println("3. Update Student Record");
+    System.out.println("4. Delete Student Record");
+    System.out.println("0. Exit");
+    select = sc.nextInt();
+
+    switch (select){
+        case 1:
+            addStud(stud);
+            getMenu();
+            break;
+        case 2:
+            viewStud(stud);
+            getMenu();
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 0:
+            break;
+        default:
+    }
+
+}
+public static void addStud(Student[] stud){
+    Scanner sc = new Scanner(System.in);
+     int numID, year;
+     String userName, course;
+
+    int addMore;
+    int i = 0;
+    do{
+
+        System.out.println("1. Enter Student ID: ");
+         numID = sc.nextInt();
+        sc.nextLine();
+        System.out.println("2. Enter Student Name");
+         userName = sc.nextLine();
+        System.out.println("3. Enter Student Course");
+         course = sc.nextLine();
+        System.out.println("4. Enter Student Year");
+         year = sc.nextInt();
+         stud[i] = new Student(numID, year, userName, course);
+        ++i;
+
+        System.out.println("To add another Student Record Press 1");
+        addMore = sc.nextInt();
+    }while (addMore == 1 );
+
+}
+public static void viewStud(Student[] stud){
+    for(int x = 0; x < stud.length ; ++x){
+        System.out.println("1. Student ID: " + stud[x].getNumID());
+        System.out.println("2. Student Name: " + stud[x].getUserName());
+        System.out.println("3. Student Course: " + stud[x].getCourse());
+        System.out.println("4. Student Year: " + stud[x].getYear() + "\n");
+    }
+
+}
+}
+
+
+2. Create an interface with functionality of calculating simple interest,compound interest on principal amount based on given interest rates.
+
+Provide implementation of these functionality in a class
+
+package Mywork;
+
+import java.util.Scanner;
+import Mywork.Calculation;
+
+public  interface Calculation{
+    double Si(double Principle,double Rate,double Time);
+    double Ci(double Principle,double Rate,double Time);
+}
+public class CalculateCIandSI implements Calculation
+{
+	
+	 double simpleinterest=0;
+	 double compoundinterest=0;	
+	 
+	@Override
+	public double Si(double Principle,double Rate,double Time) 
+	  {
+		simpleinterest= (Principle*Rate*Time)/100;
+		return simpleinterest;
+	  }
+	@Override
+	public double Ci(double Principle,double Rate,double Time) 
+	  {
+		compoundinterest = Principle * Math.pow(1.0+Rate/100.0,Time);
+		return compoundinterest;
+	  }
+	public static void main(String[] args) 
+	{		
+		CalculateCIandSI Obj = new CalculateCIandSI();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter Principle to be Calculated");
+		double  Principle = sc.nextDouble();
+		System.out.println("Enter Rate to be Calculated");
+		double  Rate = sc.nextDouble();
+		System.out.println("Enter Time to be Calculated");
+		double  Time = sc.nextDouble();
+		
+		System.out.println("Simple Intrest :"+Obj.Si(Principle,Rate,Time));
+		System.out.println("Compound Intrest :"+Obj.Ci(Principle,Rate,Time));
+	}
+}
+3. Identify  appropriate Entities,Sub Entities,abstract classes and interfaces in Order Management System.
+
+Customer:
+	Customer_ID;
+	Customer_name;
+	Customer_password;
+	Customer_Email;
+	Customer_Mobile;
+
+Order:
+	Order_customer_id;
+	Order_id;
+	Order_number;
+	Order_description;
+	Order_type;
+
+Delivery:
+	delivery_customer_id;
+	delivery_type;
+	delivery_description;
+	delivery_id;
+	
+4. Create a class Person and implement Serializable ,
+
+personId
+personName
+personAge
+personLocation
+....
+get()... set()
+
+ Using Reflection API
+
+   1.List all the constructors in Person class.
+   2.Write a code to dynamically create an object of Person class using class data.
+   3. Identify if Person class is implementing Serializable interface
+   4. Identify if Person class has getter() and setter() methods.
+
+import java.io.serializable;
+
+public class Person implements serializable {
+		private personid = 1;
+		private int id;
+		private String Name;
+		private int Age;
+		private String Location; 
+	public Person(){}
+
+	public Person(int id, String Name, int Age, String Location) {
+		super();
+		this.id = id;
+		this.Name = Name;
+		this.Age = Age;
+		this.Location = Location;
+	}
+		
+		public int getid() {
+			return id=id;
+		}
+		public void setid(int id) {
+			this.getid();
+		}
+		public String getName() {
+			return Name=Name;
+		}
+		public void setName(String Name) {
+			this.getName();
+		}
+		public int getAge() {
+			return Age=Age;
+		}
+		public void setAge(int Age) {
+			this.getAge();
+		}
+		public String getLocation() {
+			return Location=Location;
+		}
+		public void setLocation(String Location) {
+			this.getLocation();
+		}
+	public static long getpersonid() {
+		return personid;
+	}
+}

@@ -1,0 +1,55 @@
+1. In a string find and replace a word.
+
+	e.g Java is Object Oriented. Java is Programming Language.
+	Searh for word "Java"
+	Replace "Java" with "C++";
+C++ is Object Oriented programming Language.
+
+
+public static void main(String[] args) {
+
+    String str ="Java is Object Oriented. Java is Programming Language";
+    String str1 = str.replaceAll("Java", "C++");
+        System.out.println(str1);
+}
+
+
+2. In String count number of words, count numbers of number.
+   "12,RutherFord Buiding,Lake Stree,Chickago-29"
+
+Hint: StreamTokenizer
+
+package Mywork;
+
+
+public class count {
+	  public static void main(String args[]) {
+	     int flag = 0;
+	     int count = 0;
+	     int i = 0;
+      String str = "12,RutherFord Buiding,Lake Stree,Chickago-29";
+      int count1=0;
+      for(int j=0;j<str.length();j++)
+      {
+        if(Character.isDigit(str.charAt(j)))
+        count1++;
+      
+      }
+      System.out.println("The string is: " + str);
+      System.out.println("No of numbers in the above string are: " + count1);
+
+      while (i < str.length()) {
+	    	if (str.charAt(i) == ' ' || str.charAt(i) == '\n' || str.charAt(i) == '\t')
+	        {
+	           flag = 0;
+	        }else if (flag == 0) {
+	           flag = 1;
+	           count++;
+	        }
+	        i++;
+	     }
+	     System.out.println("The string is: " + str);
+	      System.out.println("No of words in the above string are: " + count);
+	   }
+}
+

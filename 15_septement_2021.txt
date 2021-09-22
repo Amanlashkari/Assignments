@@ -1,0 +1,52 @@
+1. Identify Custom exception handling classes for following systems
+
+ Stock Management System
+	UnauthorizedAccessException
+	ServerDowntimeException
+	InsufficientFundsException
+	TradingAccountNotFoundException
+	
+  Library Management System
+	BookNotFoundException
+	ServerDowntimeException
+	OverDueException
+	MaximumLimitReachedException
+	BookRenewalException
+	BookIssuerException
+	DuplicateRecordFoundException
+
+  Inventory Management System
+	OutOfStockException
+	InsufficientLotException
+	MachineDownTimeException
+	NoMoreOrdersException
+	ServerDowntimeException
+
+
+2. Identify 10 checked exception and 10 unchecked exception handling classes in JSE 8.0
+
+
+CheckedException:
+	InstantiationException
+	IllegalAccessException	
+	InterruptedException
+	CloneNotSupportedException	
+	NoSuchFieldException
+	IOException
+	FileNotFoundException
+	SQLException
+	ClassNotFoundException
+	InvocationTargetException
+	
+UncheckedException:
+	RuntimeException
+	NullPointerException
+	IllegalArgumentException
+	IndexOutOfBoundException
+	NumberFormatException
+	InputMismatchException
+	MissingResourceException
+	NoSuchElementException
+	UndeclaredThrowableException
+	EmptyStackException
+		
